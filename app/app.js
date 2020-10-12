@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FontFaceObserver from 'fontfaceobserver';
 
-//Using this instead of history object
+// Using this instead of history object
 import { BrowserRouter } from 'react-router-dom';
 
 import 'sanitize.css/sanitize.css';
@@ -13,13 +13,12 @@ import 'sanitize.css/sanitize.css';
 // Import root app
 import App from './components/index';
 
-
 // Load the favicon and the .htaccess file
-import '!file-loader?name=[name].[ext]!./images/favicon.ico';
-//TODO htacess later
+// TODO
+// import '!file-loader?name=[name].[ext]!./images/favicon.ico';
+
+// TODO htacess later
 // import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line import/extensions
-
-
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
@@ -30,14 +29,12 @@ openSansObserver.load().then(() => {
   document.body.classList.add('fontLoaded');
 });
 
-
-
 const MOUNT_NODE = document.getElementById('app');
 
-const render = messages => {
+const render = () => {
   ReactDOM.render(
     <BrowserRouter>
-        <App />
+      <App />
     </BrowserRouter>,
     MOUNT_NODE,
   );
@@ -49,7 +46,7 @@ if (module.hot) {
   // have to be constants at compile-time
   module.hot.accept(['components/index'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-    render(translationMessages);
+    render();
   });
 }
 

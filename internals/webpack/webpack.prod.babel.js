@@ -114,9 +114,9 @@ module.exports = require('./webpack.base.babel')({
       threshold: 10240,
       minRatio: 0.8,
     }),
-      //TODO
-      // 1. Description
-      //2. Images in app folder
+    // TODO
+    // 1. Description
+    // 2. Images in app folder
     new WebpackPwaManifest({
       name: 'Tarang',
       short_name: 'Tarang',
