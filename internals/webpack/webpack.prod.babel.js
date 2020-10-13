@@ -1,19 +1,19 @@
 // Important modules this config uses
-const path = await import('path');
-const HtmlWebpackPlugin = await import('html-webpack-plugin');
-const WebpackPwaManifest = await import('webpack-pwa-manifest');
-const OfflinePlugin = await import('offline-plugin');
-const { HashedModuleIdsPlugin } = await import('webpack');
-const TerserPlugin = await import('terser-webpack-plugin');
-const CompressionPlugin = await import('compression-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const OfflinePlugin = require('offline-plugin');
+const { HashedModuleIdsPlugin } = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
-module.exports = await import('./webpack.base.babel')({
+module.exports = require('./webpack.base.babel')({
   mode: 'production',
 
   // In production, we skip all hot-reloading stuff
   entry: [
     require.resolve('react-app-polyfill/ie11'),
-    path.join(process.cwd(), 'app/app.ts'),
+    path.join(process.cwd(), 'app/app.tsx'),
   ],
 
   // Utilize long-term caching by adding content hashes (not compilation hashes) to compiled assets

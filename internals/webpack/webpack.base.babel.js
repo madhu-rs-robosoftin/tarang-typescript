@@ -2,8 +2,8 @@
  * COMMON WEBPACK CONFIGURATION
  */
 
-const path = await import('path');
-const webpack = await import('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = options => ({
   mode: options.mode,
