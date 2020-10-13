@@ -1,26 +1,19 @@
-import React from 'react';
-// import { hot } from 'react-hot-loader';
-// import Loadable from 'react-loadable';
-import { Route, Switch } from 'react-router-dom';
-import Homepage from './pages/homepage';
+import * as React from 'react';
+import { Route, Switch,BrowserRouter } from 'react-router-dom';
+import Homepage from './organisms/homepage';
+import { Helmet } from 'react-helmet-async';
 
-// const HomePage = Loadable({
-// 	loader: () => import('./components/pages/homepage'),
-// 	loading: () => <p>Loading...</p>
-// });
-
-// const App = () => (
-// 	<Switch>
-// 		<Route exact path="/" component={HomePage} />
-// 	</Switch>
-// );
-
-// export default hot(module)(App);
-
-export default function App() {
+export default function Routes() {
   return (
-    <Switch>
-      <Route exact path="/" component={Homepage} />
-    </Switch>
-  );
-}
+    <>
+      <BrowserRouter>
+        <Helmet titleTemplate="%s - Tarang" defaultTitle="React Boilerplate">
+          <meta name="description" content="Tarang"/>
+        </Helmet>
+      </BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+      </Switch>
+    </>
+  )};
+

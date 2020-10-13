@@ -6,16 +6,16 @@ import ReactDOM from 'react-dom';
 import FontFaceObserver from 'fontfaceobserver';
 
 // Using this instead of history object
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 import 'sanitize.css/sanitize.css';
-
+import { HelmetProvider } from 'react-helmet-async';
 // Import root app
 import App from './components/index';
 
 // Load the favicon and the .htaccess file
 // TODO
-// import '!file-loader?name=[name].[ext]!./images/favicon.ico';
+// import '!file-loader?name=[name].[ext]!./assets/favicon.ico';
 
 // TODO htacess later
 // import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line import/extensions
@@ -29,15 +29,22 @@ openSansObserver.load().then(() => {
   document.body.classList.add('fontLoaded');
 });
 
-const MOUNT_NODE = document.getElementById('app');
+const MOUNT_NODE = document.getElementById('app') as HTMLElement;
 
-const render = () => {
-  ReactDOM.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
-    MOUNT_NODE,
-  );
+interface Props {
+  Component: typeof App;
+}
+
+const ConnectedApp = ({ Component }: Props) => (
+  <HelmetProvider>
+    <React.StrictMode>
+      <Component />
+    </React.StrictMode>
+  </HelmetProvider>
+);
+
+const render = (Component: typeof App) => {
+  ReactDOM.render(<ConnectedApp Component={Component} />, MOUNT_NODE);
 };
 
 if (module.hot) {
@@ -46,9 +53,12 @@ if (module.hot) {
   // have to be constants at compile-time
   module.hot.accept(['components/index'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-    render();
+    const App = require('./components/index.tsx');
+    render(App);
   });
 }
+
+render(App);
 
 // Install ServiceWorker and AppCache in the end since
 // it's not most important operation and if main code fails,
