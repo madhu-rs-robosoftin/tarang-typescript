@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   presets: [
     [
@@ -7,6 +8,7 @@ module.exports = {
       },
     ],
     '@babel/preset-react',
+    '@babel/preset-typescript',
   ],
   plugins: [
     'styled-components',
@@ -31,3 +33,5 @@ module.exports = {
     },
   },
 };
+
+/* eslint-enable*/
