@@ -1,7 +1,10 @@
-import '@babel/polyfill';
-
-// Import all the third party stuff
+/* eslint-disable */
 import React from 'react';
+/*eslint-enable*/
+
+import '@babel/polyfill';
+// Import all the third party stuff
+
 import ReactDOM from 'react-dom';
 import FontFaceObserver from 'fontfaceobserver';
 
@@ -51,8 +54,10 @@ if (module.hot) {
   // Hot reloadable React components and translation json files
   // modules.hot.accept does not accept dynamic dependencies,
   // have to be constants at compile-time
+
   module.hot.accept(['components/index'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const App = require('./components/index.tsx');
     render(App);
   });
@@ -64,5 +69,6 @@ render(App);
 // it's not most important operation and if main code fails,
 // we do not want it installed
 if (process.env.NODE_ENV === 'production') {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   require('offline-plugin/runtime').install(); // eslint-disable-line global-require
 }
