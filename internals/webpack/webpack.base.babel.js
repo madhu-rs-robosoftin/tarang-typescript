@@ -2,8 +2,8 @@
  * COMMON WEBPACK CONFIGURATION
  */
 
-const path = require('path');
-const webpack = require('webpack');
+const path = await import('path');
+const webpack = await import('webpack');
 
 module.exports = options => ({
   mode: options.mode,
@@ -20,7 +20,7 @@ module.exports = options => ({
   module: {
     rules: [
       {
-        test: /\.jsx?$/, // Transform all .js and .jsx files required somewhere with Babel
+        test: /\.(ts|js)x?$/, // Transform all .js and .jsx files required somewhere with Babel
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -117,7 +117,7 @@ module.exports = options => ({
   ]),
   resolve: {
     modules: ['node_modules', 'app'],
-    extensions: ['.js', '.jsx', '.react.js'],
+    extensions: ['.js', '.jsx', '.react.js', '.ts', '.tsx'],
     mainFields: ['browser', 'jsnext:main', 'main'],
   },
   devtool: options.devtool,

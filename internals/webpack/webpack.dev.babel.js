@@ -2,19 +2,19 @@
  * DEVELOPMENT WEBPACK CONFIGURATION
  */
 
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CircularDependencyPlugin = require('circular-dependency-plugin');
+const path = await import('path');
+const webpack = await import('webpack');
+const HtmlWebpackPlugin = await import('html-webpack-plugin');
+const CircularDependencyPlugin = await import('circular-dependency-plugin');
 
-module.exports = require('./webpack.base.babel')({
+module.exports = await import('./webpack.base.babel')({
   mode: 'development',
 
   // Add hot reloading in development
   entry: [
     require.resolve('react-app-polyfill/ie11'),
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'app/app.js'), // Start with js/app.js
+    path.join(process.cwd(), 'app/app.ts'), // Start with js/app.js
   ],
 
   // Don't use hashes in dev mode for better performance
