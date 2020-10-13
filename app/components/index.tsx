@@ -1,4 +1,6 @@
+/* eslint-disable */
 import React from 'react';
+/*eslint-enable*/
 // import ReactDOM from 'react-dom';
 // import Routes from './routes';
 import './index.css';
