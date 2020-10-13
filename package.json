@@ -37,7 +37,7 @@
     "prettify": "prettier --write",
     "checktypes": "tsc --noEmit",
     "tsc": "tsc",
-    "tsc-dev" : "concurrently \"tsc -w\" \"nodemon dist/index.js\""
+    "tsc-dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\""
   },
   "browserslist": [
     "last 2 versions",
@@ -74,6 +74,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "6.0.0-beta",
+    "react-helmet-async": "^1.0.7",
     "react-intl": "2.8.0",
     "react-router": "^5.2.0",
     "react-router-dom": "5.0.0",
