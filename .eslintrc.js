@@ -23,6 +23,7 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
+  plugins: ['react-hooks'],
   env: {
     jest: true,
     browser: true,

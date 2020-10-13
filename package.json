@@ -36,7 +36,8 @@
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "prettify": "prettier --write",
     "checktypes": "tsc --noEmit",
-    "tsc" : "tsc"
+    "tsc": "tsc",
+    "tsc-dev" : "concurrently \"tsc -w\" \"nodemon dist/index.js\""
   },
   "browserslist": [
     "last 2 versions",
@@ -121,6 +122,7 @@
     "circular-dependency-plugin": "5.0.2",
     "compare-versions": "3.4.0",
     "compression-webpack-plugin": "2.0.0",
+    "concurrently": "^5.3.0",
     "css-loader": "2.1.1",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "17.1.0",
@@ -143,6 +145,7 @@
     "lint-staged": "8.1.5",
     "ngrok": "3.1.1",
     "node-plop": "0.18.0",
+    "nodemon": "^2.0.4",
     "null-loader": "0.1.1",
     "offline-plugin": "5.0.6",
     "plop": "2.3.0",

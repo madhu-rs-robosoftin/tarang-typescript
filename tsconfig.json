@@ -17,7 +17,7 @@
     "jsx": "react",
     "sourceMap": true,
     "baseUrl": "./app",
-    "outDir": "./build"
+    "outDir": "./dist"
   },
   "include": ["app/**/*", "internals/**/*"]
 }
