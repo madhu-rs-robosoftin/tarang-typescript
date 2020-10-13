@@ -15,8 +15,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
+    "sourceMap": true,
     "baseUrl": "./app",
     "outDir": "./build"
   },
-  "include": ["app", "internals/**/*"]
+  "include": ["app/**/*", "internals/**/*"]
 }
