@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react",
     "sourceMap": true,
-    "baseUrl": "./app",
+    "baseUrl": "./",
     "outDir": "./dist"
   },
   "include": ["app/**/*", "internals/**/*"]

@@ -31,6 +31,20 @@ module.exports = {
     es6: true,
   },
   rules: {
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'never',
+        groups: [
+          'index',
+          'sibling',
+          'parent',
+          'internal',
+          'external',
+          'builtin',
+        ],
+      },
+    ],
     'prettier/prettier': ['error', prettierOptions],
     'arrow-body-style': [2, 'as-needed'],
     'class-methods-use-this': 0,
@@ -61,7 +75,7 @@ module.exports = {
     'no-console': 1,
     'no-unused-vars': 1,
     'no-use-before-define': 0,
-    'prefer-template': 2,
+    'prefer-template': 1,
     'react/destructuring-assignment': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react/jsx-closing-tag-location': 0,
@@ -76,6 +90,16 @@ module.exports = {
     'react/sort-comp': 0,
     'require-yield': 0,
   },
+  overrides: [
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        'import/no-unresolved': 'off',
+        'import/order': 'off',
+      },
+    },
+  ],
   settings: {
     'import/resolver': {
       webpack: {
@@ -83,6 +107,7 @@ module.exports = {
       },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        paths: ['./'],
       },
     },
     react: {
