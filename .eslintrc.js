@@ -8,38 +8,6 @@ const prettierOptions = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
 );
 
-// export const parser = '@typescript-eslint/parser';
-// export const parserOptions = {
-//   ecmaVersion: 2020,
-//   sourceType: 'module',
-//   ecmaFeatures: {
-//     jsx: true,
-//   },
-// };
-// export const settings = {
-//   react: {
-//     version: 'detect',
-//   },
-//   'import/resolver': {
-//     webpack: {
-//       config: './internals/webpack/webpack.prod.babel.js',
-//     },
-//     node: {
-//       extensions: ['.js', '.jsx', '.ts', '.tsx'],
-//     },
-//   },
-// };
-// export const extends = [
-//   'plugin:react/recommended',
-//   'plugin:@typescript-eslint/recommended',
-//   'prettier/@typescript-eslint',
-//   'plugin:prettier/recommended',
-// ];
-// export const rules = {
-//   // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-//   // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-// };
-
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
