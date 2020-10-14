@@ -15,6 +15,8 @@ import 'sanitize.css/sanitize.css';
 import { HelmetProvider } from 'react-helmet-async';
 // Import root app
 import App from './components/index';
+import UserState from './context/user/userState';
+import LanguageState from './localization/languageState';
 
 // Load the favicon and the .htaccess file
 // TODO
@@ -41,7 +43,11 @@ interface Props {
 const ConnectedApp = ({ Component }: Props) => (
   <HelmetProvider>
     <React.StrictMode>
-      <Component />
+      <UserState>
+        <LanguageState>
+          <Component />
+        </LanguageState>
+      </UserState>
     </React.StrictMode>
   </HelmetProvider>
 );

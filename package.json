@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.4.3",
+    "axios": "^0.20.0",
     "babel-plugin-styled-components": "^1.11.1",
     "compression": "1.7.4",
     "cross-env": "5.2.0",
